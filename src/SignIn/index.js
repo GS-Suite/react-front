@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://media.giphy.com/media/1lvW7RNQX12CyjlYw1/giphy.gif)',
+    ///backgroundImage: 'url(https://media.giphy.com/media/1lvW7RNQX12CyjlYw1/giphy.gif)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === theme.palette.grey[50],
@@ -54,8 +54,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInSide() {
+export default function SignIn (props) {
   const classes = useStyles();
+
+  function Login (event) {
+    event.preventDefault();
+    props.history.push("/dashboard");
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -75,7 +80,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={Login}>
             <TextField
               variant="outlined"
               margin="normal"
