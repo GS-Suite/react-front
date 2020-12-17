@@ -4,9 +4,10 @@ import {
     Switch, Route, Redirect,
 } from 'react-router-dom';
 
-import SideBar from './SideBar/sidebar';
+import SideBar from './SideBar';
 import Home from './Home';
 import Channel from './Channel';
+import Explore from './Explore';
 
 import useStyles from './styles';
 import React, { useEffect, useState } from 'react';
@@ -27,6 +28,7 @@ const Dashboard = (props) => {
                     <Switch>
                         <Route path="/dashboard" exact component={Home} />
                         <Route path="/channel" exact component={Channel} />
+                        <Route path="/explore" exact component={Explore} />
                     </Switch>
                 </main>
             </Container>
