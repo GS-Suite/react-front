@@ -15,8 +15,8 @@ export default function SideBar({props}) {
   const classes = useStyles();
 
   function logout(){
-    //window.sessionStorage.removeItem("token");
-    props.history.push('/login');
+    localStorage.removeItem("token");
+    props.history.push('/signin');
   }
 
   return (

@@ -16,9 +16,13 @@ import React, { useEffect, useState } from 'react';
 const Dashboard = (props) => {
 
     document.title = "Dashboard | GS-Suite"
-    const [testToken, setTestToken] = useState(false)
-    
     const classes = useStyles()
+
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            props.history.push('/signin');
+        }
+    }, []);
 
     return (
         <Router>
