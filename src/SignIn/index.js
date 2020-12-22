@@ -8,6 +8,7 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
+import logo from './logo.png';
 import API_BASE_URL from '../constants';
 
 
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    padding: 10,
   },
   loading: {
     display: 'flex',
@@ -106,68 +108,69 @@ export default function SignIn (props) {
                 {/* <Typography component="h1" variant="h7">
                   GS-Suite
                 </Typography> */}
-                <img src={"./logo.jpg"} width="300" height="120"></img>
+                <img src={logo} width="300" height="120"></img>
               </div>
-          
               <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
                   <LockOutlinedIcon />
                 </Avatar>
-                <Typography component="h1" variant="h6">
+                <Typography variant="h5">
                   Sign In
                 </Typography>
-                <form className={classes.form} noValidate onSubmit={Login}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="username"
-                    label="Username"
-                    onChange={e => setUsername(e.target.value)}
-                    name="username"
-                    autoFocus
-                  />
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    onChange={e => setPassword(e.target.value)}
-                    id="password"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
-                  />
-                  <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    className={classes.submit}
-                  >
-                    Sign In
-                  </Button>
-                  <Grid container>
-                    <Grid item xs>
-                      <Link href="#" variant="body2">
-                        Forgot password?
-                      </Link>
+                <div style={{paddingRight: 60, paddingLeft: 60}} >
+                  <form className={classes.form} Validate onSubmit={Login}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="username"
+                      label="Username"
+                      onChange={e => setUsername(e.target.value)}
+                      name="username"
+                      autoFocus
+                    />
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      onChange={e => setPassword(e.target.value)}
+                      id="password"
+                    />
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      className={classes.submit}
+                    >
+                      Sign In
+                    </Button>
+                    <FormControlLabel
+                      control={<Checkbox value="remember" color="primary" />}
+                      label="Remember me"
+                    />
+                    <Grid container>
+                      <Grid item xs>
+                        <Link href="#" variant="body2">
+                          Forgot password?
+                        </Link>
+                      </Grid>
+                      <Grid item>
+                        <Link href="/signup" variant="body2">
+                          {"Don't have an account? Sign Up!"}
+                        </Link>
+                      </Grid>
                     </Grid>
-                    <Grid item>
-                      <Link href="/signup" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                      </Link>
-                    </Grid>
-                  </Grid>
-                  <Box mt={5}>
-                    <Copyright />
-                  </Box>
-                </form>
+                    <Box mt={5}>
+                      <Copyright />
+                    </Box>
+                  </form>
+                </div>
               </div>
             </Grid>
           </Grid>
