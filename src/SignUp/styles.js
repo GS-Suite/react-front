@@ -28,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: theme.shadows[5],
       fontSize: "larger",
     },
+    loading: {
+      display: 'flex',
+      marginTop: 50,
+      justifyContent: "center",
+    },
   }));
 
 export default useStyles;
