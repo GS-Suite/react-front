@@ -1,4 +1,4 @@
-import { Container } from '@material-ui/core';
+import { Container, Fade, } from '@material-ui/core';
 import {
     BrowserRouter as Router,
     Switch, Route, Redirect,
@@ -26,16 +26,18 @@ const Dashboard = (props) => {
 
     return (
         <Router>
-            <Container className={classes.root}>
-                <SideBar props={props} />
-                <main className={classes.content}>
-                    <Switch>
-                        <Route path="/dashboard" exact component={Home} />
-                        <Route path="/channel" exact component={Channel} />
-                        <Route path="/explore" exact component={Explore} />
-                    </Switch>
-                </main>
-            </Container>
+            <Fade in={true} timeout={500}>
+                <Container className={classes.root}>
+                        <SideBar props={props} />
+                        <main className={classes.content}>
+                            <Switch>
+                                <Route path="/dashboard" exact component={Home} />
+                                <Route path="/channel" exact component={Channel} />
+                                <Route path="/explore" exact component={Explore} />
+                            </Switch>
+                        </main>
+                </Container>
+            </Fade>
         </Router>
     )
 }
