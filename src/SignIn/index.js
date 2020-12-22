@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Avatar, Button, CssBaseline,
   TextField, FormControlLabel, Checkbox,
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    ///backgroundImage: 'url(https://media.giphy.com/media/1lvW7RNQX12CyjlYw1/giphy.gif)',
+    backgroundImage: 'url(https://media.giphy.com/media/46zrGVRCwKPQDCIbcB/giphy.gif)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === theme.palette.grey[50],
@@ -84,16 +84,17 @@ export default function SignIn (props) {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Typography component="h1" variant="h7">
+          {/* <Typography component="h1" variant="h7">
             GS-Suite
-          </Typography>
+          </Typography> */}
+          <img src={"./logo.jpg"} width="300" height="120"></img>
         </div>
     
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h6">
             Sign In
           </Typography>
           <form className={classes.form} noValidate onSubmit={Login}>

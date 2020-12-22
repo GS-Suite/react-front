@@ -10,6 +10,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import axios from 'axios';
 
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -18,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
     },
-    gridList: {
-      width: 500,
-      height: 450,
-    },
+    // gridList: {
+    //   width: 500,
+    //   height: 200,
+    // },
     search: {
         display: "flex",
     }
@@ -112,10 +113,11 @@ export default function Explore () {
                                 key={item.title}
                                 >
                                 <img
-                                    width={item.thumbnail_width}
-                                    height={item.thumbnail_height}
+                                    // width="200"
+                                    // height="100"
                                     src={item.thumbnail_url}
                                  />
+                                
                             </ButtonBase>                 
                         </GridListTile>
                         )
