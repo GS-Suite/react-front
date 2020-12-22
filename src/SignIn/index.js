@@ -7,6 +7,8 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
+import API_BASE_URL from '../constants';
+
 
 function Copyright() {
   return (
@@ -57,13 +59,14 @@ export default function SignIn (props) {
   const classes = useStyles();
   const [username, setUsername] = useState(undefined);
   const [password, setPassword] = useState(undefined);
-  const apiUrl = "http://127.0.0.1:8000/auth/jwt/";
+  const apiUrl = API_BASE_URL + "auth/jwt/";
 
   function Login (event) {
     const data = {
       "username" : username,
       "password" : password
     }
+    console.log(apiUrl);
     axios.post(apiUrl, data).then((response) => {
       if(response.status === 200){
         if (response.data["token"] !== undefined) {

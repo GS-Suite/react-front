@@ -9,6 +9,7 @@ import {
  } from '@material-ui/core';
 import useStyles from './styles';
 import axios from 'axios';
+import API_BASE_URL from "../constants";
 
 
 const SignUp = (props) => {
@@ -30,7 +31,7 @@ const SignUp = (props) => {
       "password2": password2
     }
     console.log(data);
-    axios.post("http://127.0.0.1:8000/sign_up/", data).then((response) => {
+    axios.post(API_BASE_URL + "sign_up/", data).then((response) => {
       if(response.status === 200){
         console.log(response.data);
         if (response.data["result"] === true ){
